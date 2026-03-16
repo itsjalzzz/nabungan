@@ -11,7 +11,7 @@ const db = mysql.createConnection(
         host: "localhost",
         user: "root",
         password: "",
-        database:"TabunganGuwehMySaya"
+        database:"MyTabunganGuweh"
     }
 );
 
@@ -21,7 +21,7 @@ app.get('/', (req,res) => {
 
 app.post('/simpan', (req,res) => {
     const { NamaPenabung,nominal } = req.body;
-    const sql =  "INSERT INTO Nabung (NamaPenabung,nominal) VALUES (?,?)"
+    const sql =  "INSERT INTO Tabungan (Nama,Nominal) VALUES (?,?)"
 
     db.query(sql,[NamaPenabung,nominal], (err,result) => {
         if(err) throw err;
